@@ -1,5 +1,5 @@
 ﻿AppleOs
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 D:\Documents\repo\AppleOs\App.xaml
 61189962389
 
-17868750690
+15-639094278
 1921654412462
 MainWindow.xaml;Resources\Controls\SideList.xaml;Resources\Dictionaries\Buttons.xaml;Resources\Dictionaries\Colors.xaml;Resources\Dictionaries\GlobalVariables.xaml;Test\MainTestWindow.xaml;
 
-True
+False
 

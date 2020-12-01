@@ -7,7 +7,30 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Resources\Controls\SideList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Test\MainTestWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Controls\SideList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Dictionaries\Buttons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Dictionaries\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Dictionaries\GlobalVariables.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Test\MainTestWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

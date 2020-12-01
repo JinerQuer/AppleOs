@@ -1,0 +1,63 @@
+﻿<Window x:Class="AppleOs.Test.MainTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppleOs.Test"
+        xmlns:res ="clr-namespace:AppleOs.Resources"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        x:Name="TestWindow"
+        Title="TestWindow" Height="450" Width="800"
+        local:WindowBlur.IsEnabled="True">
+    <Window.Resources>
+        <Style TargetType="{x:Type local:MainTestWindow}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border Opacity="0.8" Background="{StaticResource NormalDarkSolidBrush}" BorderThickness="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}, Converter={res:WindowStateToThicknessConverter}}">
+                            <ContentPresenter Content="{TemplateBinding Content}"></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            ResizeBorderThickness="3"
+            CaptionHeight="{StaticResource WindowCaptionHeight}"
+            CornerRadius="0"
+            GlassFrameThickness="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding Source={StaticResource WindowCaptionHeight}, Converter={res:DoubleToGridLengthConverter}}"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel Width="10"/>
+            <Button Style="{StaticResource WindowButton}" Background="{StaticResource NormalRedSolidBrush}" Foreground="{StaticResource DarkRedSolidBrush}" Click="Window_Close"/>
+            <Button Style="{StaticResource WindowButton}" Background="{StaticResource NormalYellowSolidBrush}" Foreground="{StaticResource DarkYellowSolidBrush}" Click="Window_Minimized"/>
+            <Button Style="{StaticResource WindowButton}" Background="{StaticResource NormalGreenSolidBrush}" Foreground="{StaticResource DarkGreenSolidBrush}" Click="Window_Maximized"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                
+            </StackPanel>
+            <GridSplitter BorderThickness="3" Background="Red" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+            <StackPanel Grid.Column="2">
+
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Window>
